@@ -26,11 +26,21 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
 
   try {
+
+    const name = nameInput.value.trim();
+
+   if (name ==='') {
+    createNotification(true, 'No puede estar vacio');
+
+    setTimeout(() => {
+      notification.innerHTML= '';
+    }, 5000);
+
+   } else {
     const newUser = {
-      name: nameInput.value,
+      name: name,
     };
 
-    console.log(newUser);
 
     // formBtn.setAttribute('disabled', true);
 
@@ -51,6 +61,7 @@ form.addEventListener('submit', async e => {
 
 
 
+   }
   } catch (error) {
     console.log(error);
     createNotification(true, error.response.data.error);

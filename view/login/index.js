@@ -7,16 +7,27 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
 
   try {
-    const user = {
+  const cleanName = name.value.trim(); 
+    if (cleanName === "") {
+      
+      createNotification(true, 'No puede estar vacio');
 
-      name: name.value,
+      setTimeout(() => {
+        notification.innerHTML= '';
+      }, 5000);
 
-    };
+      } else {
+      const user = {
 
-    await axios.post('/api/login', user);
-
-    
-    window.location.pathname = `/stats/`;
+        name: cleanName,
+  
+      };
+  
+      await axios.post('/api/login', user);
+  
+      
+      window.location.pathname = `/stats/`;
+    }
 
   } catch (error) {
 
