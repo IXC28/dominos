@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Mi Perfil</title>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center pt-20">
+
+    <nav id="navbar" class="fixed top-0 right-0 left-0 bg-blue-700 h-16">
+    </nav>
+<div class="flex flex-wrap gap-7">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md w-full md:w-2/3 lg:w-1/2">
+        <h2  id="title" class="text-2xl font-semibold mb-6">Mi Perfil</h2>
+        <label for="title" class="text-gray-500">Introduce el numero que deseas sumar a tus estadisticas, que todos te vemos</label>
+        <form id="form">
+            <div class="mb-4">
+                <label for="partidas-ganadas" class="block text-gray-700 font-semibold mb-2">Partidas ganadas</label>
+                <input type="number" id="partidas-ganadas" name="partidas-ganadas" class="w-full p-2 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="partidas-perdidas" class="block text-gray-700 font-semibold mb-2">Partidas perdidas</label>
+                <input type="number" id="partidas-perdidas" name="partidas-perdidas" class="w-full p-2 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="zapatos" class="block text-gray-700 font-semibold mb-2">Zapatos</label>
+                <input type="number" id="zapatos" name="zapatos" class="w-full p-2 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out w-full">Sumar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Nuevo div para mostrar estadísticas -->
+    <div class="max-w-md mx-auto bg-white p-6 mt-6 rounded-lg shadow-md w-full md:w-2/3 lg:w-1/2 md:flex-col">
+        <h2 class="text-2xl font-semibold mb-6">Estadísticas</h2>
+        <div class="mb-4">
+            <p class="text-gray-700 font-semibold">Partidas ganadas: <span id="partidas-wins" class="text-blue-500"></span></p>
+        </div>
+        <div class="mb-4">
+            <p class="text-gray-700 font-semibold">Partidas perdidas: <span id="partidas-lose" class="text-blue-500"></span></p>
+        </div>
+        <div class="mb-4">
+            <p class="text-gray-700 font-semibold">Zapatos: <span id="zapato" class="text-blue-500"></span></p>
+        </div>
+    </div>
+</div>
+    <script src="/components/nav.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
