@@ -16,7 +16,7 @@ form.addEventListener('submit', async e => {
     await axios.post('/api/login', user);
 
     
-    window.location.pathname = `/login/`;
+    window.location.pathname = `/stats/`;
 
   } catch (error) {
 
